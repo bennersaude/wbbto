@@ -1,0 +1,13 @@
+package com.neobe.bto.funcoes;
+
+import com.neobe.bto.Negativa;
+import com.neobe.bto.GuiaSolicitacao;
+
+import java.util.List;
+
+function incluirNegativaNaSolicitacao(com.neobe.bto.GuiaSolicitacao solicitacao, String codigo, String descricao){
+    List<Negativa> listaNegativas  = solicitacao.getNegativas();
+    Negativa nova = new Negativa();
+    listaNegativas.add(nova);
+    solicitacao.setNegativas(listaNegativas);
+}
