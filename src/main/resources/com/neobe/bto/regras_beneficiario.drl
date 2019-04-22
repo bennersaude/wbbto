@@ -138,3 +138,19 @@ rule "1021 - Via de cartão do beneficiário não liberada"
         $guiaSolicitacao.setNegativas($negativas);
         insert($negativas);
 end
+
+rule "Regra de saída"
+    enabled true
+    ruleflow-group "elegibilidade_beneficiario"
+    dialect "mvel"
+    when
+        $contexto: ContextoExecucaoProcesso();
+        $guiaSolicitacao: GuiaSolicitacao() from $contexto.guiaSolicitacao;
+        $v_solicitacao: GuiaSolicitacao();
+    then
+        $guiaSolicitacao.setNegada(true);
+        $guiaSolicitacao.setInternacao(true);
+        $v_solicitacao.setNegada(true);
+        $v_solicitacao.setInternacao(true);
+        update($v_solicitacao);
+end
