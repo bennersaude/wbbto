@@ -145,12 +145,7 @@ rule "Regra de saída"
     dialect "mvel"
     when
         $contexto: ContextoExecucaoProcesso();
-        $guiaSolicitacao: GuiaSolicitacao() from $contexto.guiaSolicitacao;
-        $v_solicitacao: GuiaSolicitacao();
     then
-        $guiaSolicitacao.setNegada(true);
-        $guiaSolicitacao.setInternacao(true);
-        $v_solicitacao.setNegada(true);
-        $v_solicitacao.setInternacao(true);
-        update($v_solicitacao);
+        $contexto.setNegada(true);
+        $contexto.setInternacao(false);
 end

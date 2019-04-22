@@ -19,8 +19,35 @@ public class ContextoExecucaoProcesso implements java.io.Serializable {
 	@javax.persistence.ManyToOne(cascade = {javax.persistence.CascadeType.ALL}, fetch = javax.persistence.FetchType.EAGER)
 	private com.neobe.bto.GuiaSolicitacao guiaSolicitacao;
 
-	@org.kie.api.definition.type.Label(value = "teste")
+	@org.kie.api.definition.type.Label("teste")
 	private java.lang.String teste;
+
+	@org.kie.api.definition.type.Label("negada?")
+	private java.lang.Boolean negada;
+
+	@org.kie.api.definition.type.Label("internação?")
+	private java.lang.Boolean internacao;
+
+	@org.kie.api.definition.type.Label(value = "Possui NIP ou liminar?")
+	private java.lang.String nip_liminar;
+
+	@org.kie.api.definition.type.Label(value = "Operadora procede com atendimento (NIP/liminar)")
+	private java.lang.String nip_liminar_operadora_procede;
+
+	@org.kie.api.definition.type.Label(value = "Contato médico?")
+	private java.lang.String acao_contato_medico;
+
+	@org.kie.api.definition.type.Label(value = "Necessário documentação adicional?")
+	private java.lang.String acao_documentacao_adicional;
+
+	@org.kie.api.definition.type.Label(value = "Análise técnica especializada?")
+	private java.lang.String acao_analise_tecnica_especializada;
+
+	@org.kie.api.definition.type.Label(value = "DUT/ROL?")
+	private java.lang.String acao_dut_rol;
+
+	@org.kie.api.definition.type.Label(value = "Operadora possui junta médica?")
+	private java.lang.String operadorapossuijuntamedica;
 
 	public ContextoExecucaoProcesso() {
 	}
@@ -49,12 +76,104 @@ public class ContextoExecucaoProcesso implements java.io.Serializable {
 		this.teste = teste;
 	}
 
+	public java.lang.Boolean getNegada() {
+		return this.negada;
+	}
+
+	public void setNegada(java.lang.Boolean negada) {
+		this.negada = negada;
+	}
+
+	public java.lang.Boolean getInternacao() {
+		return this.internacao;
+	}
+
+	public void setInternacao(java.lang.Boolean internacao) {
+		this.internacao = internacao;
+	}
+
+	public java.lang.String getNip_liminar() {
+		return this.nip_liminar;
+	}
+
+	public void setNip_liminar(java.lang.String nip_liminar) {
+		this.nip_liminar = nip_liminar;
+	}
+
+	public java.lang.String getNip_liminar_operadora_procede() {
+		return this.nip_liminar_operadora_procede;
+	}
+
+	public void setNip_liminar_operadora_procede(
+			java.lang.String nip_liminar_operadora_procede) {
+		this.nip_liminar_operadora_procede = nip_liminar_operadora_procede;
+	}
+
+	public java.lang.String getAcao_contato_medico() {
+		return this.acao_contato_medico;
+	}
+
+	public void setAcao_contato_medico(java.lang.String acao_contato_medico) {
+		this.acao_contato_medico = acao_contato_medico;
+	}
+
+	public java.lang.String getAcao_documentacao_adicional() {
+		return this.acao_documentacao_adicional;
+	}
+
+	public void setAcao_documentacao_adicional(
+			java.lang.String acao_documentacao_adicional) {
+		this.acao_documentacao_adicional = acao_documentacao_adicional;
+	}
+
+	public java.lang.String getAcao_analise_tecnica_especializada() {
+		return this.acao_analise_tecnica_especializada;
+	}
+
+	public void setAcao_analise_tecnica_especializada(
+			java.lang.String acao_analise_tecnica_especializada) {
+		this.acao_analise_tecnica_especializada = acao_analise_tecnica_especializada;
+	}
+
+	public java.lang.String getAcao_dut_rol() {
+		return this.acao_dut_rol;
+	}
+
+	public void setAcao_dut_rol(java.lang.String acao_dut_rol) {
+		this.acao_dut_rol = acao_dut_rol;
+	}
+
+	public java.lang.String getOperadorapossuijuntamedica() {
+		return this.operadorapossuijuntamedica;
+	}
+
+	public void setOperadorapossuijuntamedica(
+			java.lang.String operadorapossuijuntamedica) {
+		this.operadorapossuijuntamedica = operadorapossuijuntamedica;
+	}
+
 	public ContextoExecucaoProcesso(java.lang.Long id,
 			com.neobe.bto.GuiaSolicitacao guiaSolicitacao,
-			java.lang.String teste) {
+			java.lang.String teste, java.lang.Boolean negada,
+			java.lang.Boolean internacao, java.lang.String nip_liminar,
+			java.lang.String nip_liminar_operadora_procede,
+			java.lang.String acao_contato_medico,
+			java.lang.String acao_documentacao_adicional,
+			java.lang.String acao_analise_tecnica_especializada,
+			java.lang.String acao_dut_rol,
+			java.lang.String operadorapossuijuntamedica) {
 		this.id = id;
 		this.guiaSolicitacao = guiaSolicitacao;
 		this.teste = teste;
+		this.negada = negada;
+		this.internacao = internacao;
+		this.nip_liminar = nip_liminar;
+		this.nip_liminar_operadora_procede = nip_liminar_operadora_procede;
+		this.acao_contato_medico = acao_contato_medico;
+		this.acao_documentacao_adicional = acao_documentacao_adicional;
+		this.acao_analise_tecnica_especializada = acao_analise_tecnica_especializada;
+		this.acao_dut_rol = acao_dut_rol;
+		this.operadorapossuijuntamedica = operadorapossuijuntamedica;
 	}
 
 }
