@@ -30,11 +30,6 @@ public class Beneficiario implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Idade do beneficiário (Ano, Meses e Dias)")
 	private int idadeDias;
 
-	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "BENEFICIARIO_ID_GENERATOR")
-	@javax.persistence.Id
-	@javax.persistence.SequenceGenerator(sequenceName = "BENEFICIARIO_ID_SEQ", name = "BENEFICIARIO_ID_GENERATOR")
-	private java.lang.Long id1;
-
 	@org.kie.api.definition.type.Label("Indica se beneficiário está suspenso na data corrente")
 	private java.lang.Boolean suspenso;
 
@@ -47,7 +42,7 @@ public class Beneficiario implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Cartão do beneficiário bloqueado")
 	private java.lang.Boolean cartaoBloqueado;
 
-	@org.kie.api.definition.type.Label(value = "Sexo do beneficiário")
+	@org.kie.api.definition.type.Label("Sexo do beneficiário")
 	private java.lang.String sexo;
 
 	public Beneficiario() {
@@ -109,14 +104,6 @@ public class Beneficiario implements java.io.Serializable {
 		this.idadeDias = idadeDias;
 	}
 
-	public java.lang.Long getId1() {
-		return this.id1;
-	}
-
-	public void setId1(java.lang.Long id1) {
-		this.id1 = id1;
-	}
-
 	public java.lang.Boolean getSuspenso() {
 		return this.suspenso;
 	}
@@ -159,9 +146,8 @@ public class Beneficiario implements java.io.Serializable {
 
 	public Beneficiario(java.lang.Long id, java.lang.String nome,
 			int idadeMaximaPlano, java.lang.Boolean negado, int idadeAnos,
-			int idadeMeses, int idadeDias, java.lang.Long id1,
-			java.lang.Boolean suspenso, java.lang.Boolean inativo,
-			java.lang.Boolean cartaoCancelado,
+			int idadeMeses, int idadeDias, java.lang.Boolean suspenso,
+			java.lang.Boolean inativo, java.lang.Boolean cartaoCancelado,
 			java.lang.Boolean cartaoBloqueado, java.lang.String sexo) {
 		this.id = id;
 		this.nome = nome;
@@ -170,7 +156,6 @@ public class Beneficiario implements java.io.Serializable {
 		this.idadeAnos = idadeAnos;
 		this.idadeMeses = idadeMeses;
 		this.idadeDias = idadeDias;
-		this.id1 = id1;
 		this.suspenso = suspenso;
 		this.inativo = inativo;
 		this.cartaoCancelado = cartaoCancelado;
