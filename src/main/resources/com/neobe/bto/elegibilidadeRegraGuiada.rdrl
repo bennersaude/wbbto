@@ -1,0 +1,18 @@
+package com.neobe.bto;
+
+import java.lang.Number;
+
+rule "elegibilidadeRegraGuiada"
+	dialect "mvel"
+	ruleflow-group "regra_guiada"
+	when
+		$contexto : ContextoExecucaoProcesso( )
+		$guiaSolicitacao : GuiaSolicitacao( ) from $contexto.guiaSolicitacao
+		Beneficiario( sexo == "M" , idadeAnos >= 20 , idadeAnos <= 30 ) from $guiaSolicitacao.beneficiario
+	then
+		$listaNegativas = $guiaSolicitacao.getNegativas()
+		Negativa $negativa = new Negativa();
+		$negativa.setCodigo( "1020" );
+		$negativa.setDescricao( "negação 1020" );
+		insert( $negativa );
+end

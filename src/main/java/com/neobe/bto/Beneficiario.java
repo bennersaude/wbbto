@@ -38,14 +38,17 @@ public class Beneficiario implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Indica se beneficiário está suspenso na data corrente")
 	private java.lang.Boolean suspenso;
 
-	@org.kie.api.definition.type.Label(value = "Beneficiário inativo na data de solicitação")
+	@org.kie.api.definition.type.Label("Beneficiário inativo na data de solicitação")
 	private java.lang.Boolean inativo;
 
-	@org.kie.api.definition.type.Label(value = "Cartão do beneficiário cancelado")
+	@org.kie.api.definition.type.Label("Cartão do beneficiário cancelado")
 	private java.lang.Boolean cartaoCancelado;
 
-	@org.kie.api.definition.type.Label(value = "Cartão do beneficiário bloqueado")
+	@org.kie.api.definition.type.Label("Cartão do beneficiário bloqueado")
 	private java.lang.Boolean cartaoBloqueado;
+
+	@org.kie.api.definition.type.Label(value = "Sexo do beneficiário")
+	private java.lang.String sexo;
 
 	public Beneficiario() {
 	}
@@ -146,11 +149,20 @@ public class Beneficiario implements java.io.Serializable {
 		this.cartaoBloqueado = cartaoBloqueado;
 	}
 
+	public java.lang.String getSexo() {
+		return this.sexo;
+	}
+
+	public void setSexo(java.lang.String sexo) {
+		this.sexo = sexo;
+	}
+
 	public Beneficiario(java.lang.Long id, java.lang.String nome,
 			int idadeMaximaPlano, java.lang.Boolean negado, int idadeAnos,
 			int idadeMeses, int idadeDias, java.lang.Long id1,
 			java.lang.Boolean suspenso, java.lang.Boolean inativo,
-			java.lang.Boolean cartaoCancelado, java.lang.Boolean cartaoBloqueado) {
+			java.lang.Boolean cartaoCancelado,
+			java.lang.Boolean cartaoBloqueado, java.lang.String sexo) {
 		this.id = id;
 		this.nome = nome;
 		this.idadeMaximaPlano = idadeMaximaPlano;
@@ -163,6 +175,7 @@ public class Beneficiario implements java.io.Serializable {
 		this.inativo = inativo;
 		this.cartaoCancelado = cartaoCancelado;
 		this.cartaoBloqueado = cartaoBloqueado;
+		this.sexo = sexo;
 	}
 
 }
