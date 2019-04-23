@@ -77,7 +77,7 @@ public class ContextoExecucaoProcesso implements java.io.Serializable {
 	}
 
 	public java.lang.Boolean getNegada() {
-		return this.negada;
+		return this.guiaSolicitacao.getNegativas().size() > 0;
 	}
 
 	public void setNegada(java.lang.Boolean negada) {
