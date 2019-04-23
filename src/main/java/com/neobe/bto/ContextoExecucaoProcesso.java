@@ -28,26 +28,29 @@ public class ContextoExecucaoProcesso implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("internação?")
 	private java.lang.Boolean internacao;
 
-	@org.kie.api.definition.type.Label(value = "Possui NIP ou liminar?")
+	@org.kie.api.definition.type.Label("Possui NIP ou liminar?")
 	private java.lang.String nip_liminar;
 
-	@org.kie.api.definition.type.Label(value = "Operadora procede com atendimento (NIP/liminar)")
+	@org.kie.api.definition.type.Label("Operadora procede com atendimento (NIP/liminar)")
 	private java.lang.String nip_liminar_operadora_procede;
 
-	@org.kie.api.definition.type.Label(value = "Contato médico?")
+	@org.kie.api.definition.type.Label("Contato médico?")
 	private java.lang.String acao_contato_medico;
 
-	@org.kie.api.definition.type.Label(value = "Necessário documentação adicional?")
+	@org.kie.api.definition.type.Label("Necessário documentação adicional?")
 	private java.lang.String acao_documentacao_adicional;
 
-	@org.kie.api.definition.type.Label(value = "Análise técnica especializada?")
+	@org.kie.api.definition.type.Label("Análise técnica especializada?")
 	private java.lang.String acao_analise_tecnica_especializada;
 
-	@org.kie.api.definition.type.Label(value = "DUT/ROL?")
+	@org.kie.api.definition.type.Label("DUT/ROL?")
 	private java.lang.String acao_dut_rol;
 
-	@org.kie.api.definition.type.Label(value = "Operadora possui junta médica?")
+	@org.kie.api.definition.type.Label("Operadora possui junta médica?")
 	private java.lang.String operadorapossuijuntamedica;
+
+	@org.kie.api.definition.type.Label(value = "Url do serviço de fila")
+	private java.lang.String urlServicoFila;
 
 	public ContextoExecucaoProcesso() {
 	}
@@ -152,6 +155,14 @@ public class ContextoExecucaoProcesso implements java.io.Serializable {
 		this.operadorapossuijuntamedica = operadorapossuijuntamedica;
 	}
 
+	public java.lang.String getUrlServicoFila() {
+		return this.urlServicoFila;
+	}
+
+	public void setUrlServicoFila(java.lang.String urlServicoFila) {
+		this.urlServicoFila = urlServicoFila;
+	}
+
 	public ContextoExecucaoProcesso(java.lang.Long id,
 			com.neobe.bto.GuiaSolicitacao guiaSolicitacao,
 			java.lang.String teste, java.lang.Boolean negada,
@@ -161,7 +172,8 @@ public class ContextoExecucaoProcesso implements java.io.Serializable {
 			java.lang.String acao_documentacao_adicional,
 			java.lang.String acao_analise_tecnica_especializada,
 			java.lang.String acao_dut_rol,
-			java.lang.String operadorapossuijuntamedica) {
+			java.lang.String operadorapossuijuntamedica,
+			java.lang.String urlServicoFila) {
 		this.id = id;
 		this.guiaSolicitacao = guiaSolicitacao;
 		this.teste = teste;
@@ -174,6 +186,7 @@ public class ContextoExecucaoProcesso implements java.io.Serializable {
 		this.acao_analise_tecnica_especializada = acao_analise_tecnica_especializada;
 		this.acao_dut_rol = acao_dut_rol;
 		this.operadorapossuijuntamedica = operadorapossuijuntamedica;
+		this.urlServicoFila = urlServicoFila;
 	}
 
 }
